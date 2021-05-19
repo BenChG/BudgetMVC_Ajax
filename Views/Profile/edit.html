@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+	
+	    <form method="post" id="formProfile" action="/profile/update">
+	
+	<div class="tile_left">
+		<input  type="text" placeholder="name" onfocus="this.placeholder=''" onblur="this.placeholder='name'" id="inputName" name="name" placeholder="Name" autofocus value="{{ user.name }}" required class="form-control"/>
+		</br>
+		<input type="password" placeholder="password" onfocus="this.placeholder=''" onblur="this.placeholder='password'" id="inputPassword" name="password" placeholder="Password" required class="form-control"/>
+		</br>
+		<div style="float:left;margin-top:-10px;font-size:12px;">
+			<label><input type="checkbox" id="showPassword" onclick="myFunction()"/> Show password</label>
+		</div>
+	</div>
+	
+	<div class="tile_right">
+		<input type="text" placeholder="e-mail" onfocus="this.placeholder=''" onblur="this.placeholder='e-mail'" id="inputEmail" name="email" placeholder="email address" value="{{ user.email }}" required type="email" class="form-control"/>
+		</br>
+		<input type="submit" value="Save">
+	</div>
+	
+	<div style="clear:both;"></div>		
+	
+</form>
+
+	<div class="long_tile">
+	Leave blank to keep current password
+	</div>
+
+<script>
+	
+	function myFunction() {
+		var x = document.getElementById("inputPassword");
+		if (x.type === "password") {
+			x.type = "text";
+			} else {
+			x.type = "password";
+		}
+	}
+		
+	</script>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block header %}	
+
+<div class="header">
+	Personal budget
+</div>
+
+{% endblock %}
+
+{% block body %}	
+
+<!--
+    {% if current_user %}
+	Hello {{ cur<rent_user.name }}.
+{% endif %} -->
+
+<div class="tile_left">	
+	<div class="tile_icon">	
+		<a href="/login" class="link">
+			<i class="icon-login-1"></br> Log in - control</br> your budget! </i>
+		</a>	
+	</div>	
+</div>	
+
+<div class="tile_right">
+	<div class="tile_icon">
+		<a href="/signup/new" class="link">
+			<i class="icon-edit-1"></br>Registration - create </br> account for free!</i>
+		</a>
+	</div>
+</div>	
+
+<div style="clear:both;"></div>		
+{% endblock %}
+

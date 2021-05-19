@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Add income{% endblock %}
+
+{% block body %}
+
+
+
+<body>
+	
+	<div class="header_income"> 
+		Add new income
+	</div>
+	
+	<div class="long_tile">	
+		<div id="additional"> <i> Fill in all below information </i> </div>		
+	</div>		
+	
+	<form action="/finances/createIncome" method="post">	
+		<div class="radio">	
+			
+			Select income category:</br>
+			<div style="margin-top:10px;">
+				<label><input type="radio" name="incomeCategory" value="Salary" required type="checkbox"> Salary </label> 
+				<label><input type="radio" name="incomeCategory" value="Interest" required type="checkbox"> Interest </label> 
+				<label><input type="radio" name="incomeCategory" value="Allegro" required type="checkbox"> Allegro </label> 
+				<label><input type="radio" name="incomeCategory" value="Another" required type="checkbox"> Another </label> 
+				</br>
+			</div>
+			
+		</div>
+		
+		
+		<div class="tile_left" style="margin-bottom: 0px;">
+			
+			
+			<input type="number" step="0.01" name="incomeAmount" placeholder="Amount" step="any" required type="number">
+			</br>
+			<input type="submit" value="Add new income">
+			
+		</div>
+		
+		<div class="tile_right" style="margin-bottom: 0px;">
+			
+			<input type="date" name="incomeDate" placeholder="Transaction date" required type="date" id="currentDate">
+			<script>
+				document.getElementById('currentDate').value = new Date().toISOString().substring(0, 10);
+			</script>
+			</br>
+			<input type="text" name="incomeComments" placeholder="Comments">
+			
+		</div>
+		<div style="clear:both;"></div>
+		
+		<input type="hidden" name="id" value="{{ user.id}}"/>
+		
+	</form>
+	
+	
+</body>
+
+
+{% endblock %}

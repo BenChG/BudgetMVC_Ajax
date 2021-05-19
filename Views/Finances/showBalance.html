@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		
+		<meta charset="UTF-8">
+		<title>{% block title %}Balance{% endblock %}</title
+			<meta name="description" content="Personal Budget - the best way to manage and save up your money" />
+			<meta name="keywords" content="finances, personal, budget, money, wallet, save, incomes, expenses, manage" />
+			<meta name="author" content="BCG">
+			<meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1">
+			<link rel="stylesheet" href="/css/styles.css" type="text/css" />
+			<link rel="stylesheet" href="/css/fontello/fontello.css" type="text/css" />
+			<link href "https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Lato&display=swap" rel="stylesheet">
+			
+			<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+			<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+			
+		</head>
+		
+
+
+<body style="width: 640px!important;margin-top:10px;">
+	
+			
+			{% block body%}
+			{% endblock %}
+			
+			{% block footer %}
+			
+			<footer>
+				
+				
+				
+				<div class="container" style="display:block;">
+					<div class="long_tile">	
+						<div id="email"> Contact me via mail:  
+							<a href="mailto:ben.chalubinski@gmail.com target="_blank" class="link">
+								<i class="icon-mail"></i> 
+							</a>			
+						</div>
+					</div>
+					
+					<div class="long_tile">	
+						<div id="rights">
+							2021 &copy; Personal Finances  
+							</br> 
+							by Benedykt Chałubiński-Gonerko	
+						</div>
+					</div>
+				</div>
+				
+				</br>
+				
+				
+			</footer>
+			{% endblock %}
+		</body>
+
+		
+	</html>

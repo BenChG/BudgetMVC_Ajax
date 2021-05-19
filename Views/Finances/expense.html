@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Add expense{% endblock %}
+
+{% block body %}
+
+<body style="margin-top:10px;">
+	
+	<div class="header_expense"> 
+		Add new expense
+	</div>
+	
+	<div class="long_tile">	
+		<div id="additional"> <i> Fill in all below information </i> </div>		
+	</div>		
+	
+	<div class="expense_category">
+		Select expense category: 
+		</br>
+	</div>
+	
+	<form action="/finances/createExpense" method="post">			
+		
+		<div class="radio_category"style="border-left:2px solid #C0C0C0;">							
+			<label><input type="radio" name="expenseCategory" value="Transport" required type="checkbox"> Transport </label> 
+			</br>
+			<label><input type="radio" name="expenseCategory" value="Books" required type="checkbox"> Books </label>
+			</br>
+			<label><input type="radio" name="expenseCategory" value="Food" required type="checkbox"> Food </label> 
+			</br>
+			<label><input type="radio" name="expenseCategory" value="Apartments" required type="checkbox"> Apartments </label> 
+			</br>
+			<label><input type="radio" name="expenseCategory" value="Telecommunication" required type="checkbox"> Telecommunication </label> 
+			</br>
+			<label><input type="radio" name="expenseCategory" value="Health" required type="checkbox"> Health </label> 
+			</br>
+			<label><input type="radio" name="expenseCategory" value="Clothes" required type="checkbox"> Clothes </label> 
+			</br>
+			<label><input type="radio" name="expenseCategory" value="Hygiene" required type="checkbox"> Hygiene </label> 
+		</div>
+		
+		<div class="radio_category" style="border-right:2px solid #C0C0C0;">	
+			<label><input type="radio" name="expenseCategory" value="Kids" required type="checkbox"> Kids </label> 
+			</br>
+			<label><input type="radio" name="expenseCategory" value="Recreation" required type="checkbox"> Recreation </label> 
+			</br>
+			<label><input type="radio" name="expenseCategory" value="Trip" required type="checkbox"> Trip </label> 
+			</br>
+			<label><input type="radio" name="expenseCategory" value="Savings" required type="checkbox"> Savings </label> 
+			</br>
+			<label><input type="radio" name="expenseCategory" value="For Retirement" required type="checkbox"> For Retirement </label> 
+			</br>
+			<label><input type="radio" name="expenseCategory" value="Debt Repayment" required type="checkbox"> Debt Repayment </label> 
+			</br>
+			<label><input type="radio" name="expenseCategory" value="Gift" required type="checkbox"> Gift </label> 
+			</br>
+			<label><input type="radio" name="expenseCategory" value="Another" required type="checkbox"> Another </label> 
+		</div>
+		
+		<div style="clear:both;"></div>
+		
+		<div class="radio">	
+			Select payment method: </br>
+			<div style="margin-top:10px;">	
+				<label><input type="radio" name="paymentMethod" value="Cash" required type="checkbox"> Cash </label>
+				<label><input type="radio" name="paymentMethod" value="Debit Card" required type="checkbox"> Debit Card </label>
+				<label><input type="radio" name="paymentMethod" value="Credit Card" required type="checkbox"> Credit Card </label>
+				</br>
+			</div>
+		</div>
+		
+		<div class="tile_left" style="margin-bottom: 0px;">
+			
+			<input type="number" step="0.01" name="expenseAmount" placeholder="Amount" step="any" required type="number">
+			</br>
+			<input type="submit" value="Add new expense">
+			
+		</div>
+		
+		<div class="tile_right" style="margin-bottom: 0px;">
+			
+			<input type="date" name="expenseDate" placeholder="Transaction date" required type="date" id="currentDate">
+			<script>
+				document.getElementById('currentDate').value = new Date().toISOString().substring(0, 10);
+			</script>
+			</br>
+			<input type="text" name="expenseComments" placeholder="Comments">
+			
+		</div>
+		<div style="clear:both;"></div>
+		
+		<input type="hidden" name="id" value="{{ user.id}}"/>
+		
+	</form>
+	
+</body>
+
+{% endblock %}

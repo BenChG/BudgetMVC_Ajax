@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Main Menu{% endblock %}
+
+
+{% block header %}
+
+<div class="tile_icon_balance">
+	<a href="/login/destroy" class="link" title="Log out"><i class="icon-logout"></i></a>	
+</div>
+
+<div class="header">
+	Personal budget
+</div>
+
+{% endblock %}
+
+{% block body %}
+
+<div style="margin-left:-6px;">	
+	<div class="tile_menu">	
+		
+		<div class="tile_icon_menu" style="background-color: #33CC33;">	
+			<a href="/finances/income" class="link"><i class="icon-list-add"></br><h1>Add new income</h1></i></a>	
+		</div>	
+		
+	</div>	
+</div>
+
+<div class="tile_menu">
+	<div class="tile_icon_menu" style="background-color: #FF3333;">	
+		<a href="/finances/expense" class="link"><i class="icon-list-add"></br><h1>Add new expense</h1></i></a>
+	</div>
+</div>		
+
+<div class="tile_menu">
+	<div class="tile_icon_menu"style="background-color: #7D3C98;" >	
+		<a href="/profile/edit" class="link"><i class="icon-key"></br><h1>Edit Profile</h1></i></a>
+	</div>
+</div>		
+
+<div style="margin-left:-6px;">
+	
+	<div class="tile_menu">
+		<div class="tile_icon_menu" style="background-color:#D35400">
+			<form action="/balance/currentMonth" method="post" id="form1">	
+				<input type="hidden" name="id" value="{{ user.id}}"/>
+				<a href="#" class="link" onclick="document.getElementById('form1').submit(); return false;"><i class="icon-balance-scale"></br><h1>Current month</h1></i></a>
+			</form>
+		</div>
+	</div>		
+	
+	<div class="tile_menu">
+		<div class="tile_icon_menu" style="background-color:#707B7C">
+			<form action="/balance/previousMonth" method="post" id="form2">	
+				<input type="hidden" name="id" value="{{ user.id}}"/>
+				<a href="#" class="link" onclick="document.getElementById('form2').submit(); return false;"><i class="icon-balance-scale"></br><h1>Previous month</h1></i></a>
+			</form>
+		</div>
+	</div>		
+	
+	<div class="tile_menu">
+		<div class="tile_icon_menu" style="background-color:#ff3399">
+			<form action="/balance/currentYear" method="post" id="form3">	
+				<input type="hidden" name="id" value="{{ user.id}}"/>
+				<a href="#" class="link" onclick="document.getElementById('form3').submit(); return false;"><i class="icon-balance-scale"></br><h1>Current year</h1></i></a>
+			</form>
+		</div>
+	</div>		
+	
+</div>
+	<div style="clear:both;"></div>		
+
+{% endblock %}
